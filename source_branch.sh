@@ -1,8 +1,20 @@
 #!/bin/bash
-# !!!!!!!!变量命名不能有空格!!!!!!!!!!!
 # ---------------------
 # 查看当前分支源分支      |
 # ---------------------
+# 1.输出参数必须使用${}，否则鸳鸯输出
+# 2.shell里不能通过调用函数给变量赋值，需要通过"$?"打印函数值
+# 3.先定义函数，再调用
+# 4.变量命名不能有空格
+
+currentBranchName(){
+	echo "进入函数"
+	curBranchName=$(git symbolic-ref --short -q HEAD)
+	echo "当前分支名字是: $curBranchName"
+	sleep 2
+	git reflog ${curBranchName}
+}
+
 if read -t 5 -p "输入仓库名称: " projectName
 then 
 	if [ $projectName == "PC" ] || [ $projectName == "pc" ]
@@ -33,10 +45,3 @@ else
 	echo "输入超时,退出脚本."
 	exit 1
 fi
-
-currentBranchName(){
-	currentBranchName = "$(git symbolic-ref --short -q HEAD)"
-	echo "当前分支名字是: $currentBranchName"
-	sleep 2
-	git reflog ${currentBranchName}
-}
