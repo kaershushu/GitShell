@@ -8,7 +8,6 @@
 # 4.变量命名不能有空格
 
 currentBranchName(){
-	echo "进入函数"
 	curBranchName=$(git symbolic-ref --short -q HEAD)
 	echo "当前分支名字是: $curBranchName"
 	sleep 2
