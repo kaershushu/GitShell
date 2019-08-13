@@ -1,4 +1,4 @@
-# Git Shell:和Git相关的Shell脚本集合
+# Git Shell:简化Git操作的Shell脚本集合
 ## [查询源分支](https://github.com/kaershushu/GitShell/blob/master/s.sh)
 
 * 脚本自定义设置
