@@ -1,9 +1,4 @@
-# Git Shell:和Git相关的Shell脚本集合:
-
-* 1.查询当前分支绑定的源分支
-
-* 2.设置只能推送到远端同名分支的`pre-push`脚本
-
+# Git Shell:和Git相关的Shell脚本集合
 ## [查询源分支](https://github.com/kaershushu/GitShell/blob/master/s.sh)
 
 * 脚本自定义设置
