@@ -4,7 +4,7 @@
 
 * 2.设置只能推送到远端同名分支的`pre-push`脚本
 
-## 查询源分支
+## [查询源分支](https://github.com/kaershushu/GitShell/blob/master/s.sh)
 
 * 脚本自定义设置
 
@@ -21,8 +21,17 @@
   > 3.打开`Terminal`直接输入设置的别名`src`即可
   
   
-## 推送同名远端分支
+## [推送同名远端分支](https://github.com/kaershushu/GitShell/blob/master/pre-push)
 
-* 
+* 脚本功能
 
+  > 当本地分支和远端分支名字不一致的时候，`Push`的时候提示失败。
+
+* 脚本自定义设置
+  
+  > 只需自定义`仓库名`和`仓库地址`即可。
+  
+* 脚本使用
+
+  > 因为是`hook`文件，所以需要放到项目的`.git`文件夹下的`hook`文件夹。Done，剩下的交给脚本来做!
 
