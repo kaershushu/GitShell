@@ -32,14 +32,15 @@ z40=0000000000000000000000000000000000000000
 
 while read local_ref local_sha remote_ref remote_sha
 do
-    if [ "${remote_ref}" != "${local_ref}" ]
+    if [ "${remote_ref}" != "${local_ref}" && "${local_ref}" != "deleted" ]
     then
-        echo "${RED}本地分支名${NC}${CYAN}${local_ref##*/}${NC}${RED}和远程分支名${NC}${CYAN}${remote_ref##*/}${NC}${RED}不一致!${NC}"
+        echo "${RED}本地分支名:${NC}${CYAN}${local_ref##*/}${NC}${RED}和远程分支名:${NC}${CYAN}${remote_ref##*/}${NC}${RED}不一致!${NC}"
         exit 1
     else
         if [ "$local_sha" = $z40 ]
         then
             # Handle delete
+            echo "远程分支: ${remote_ref} 已被删除"
             :
         else
             if [ "$remote_sha" = $z40 ]
